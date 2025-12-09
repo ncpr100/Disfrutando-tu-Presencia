@@ -15,11 +15,11 @@
 
         <main>
             <div class="date-selector">
-                <button id="prevDay" class="nav-btn">←</button>
+                <button id="prevDay" class="nav-btn" aria-label="Día anterior">←</button>
                 <div class="date-display">
                     <span id="currentDate"></span>
                 </div>
-                <button id="nextDay" class="nav-btn">→</button>
+                <button id="nextDay" class="nav-btn" aria-label="Día siguiente">→</button>
             </div>
 
             <div class="journal-entry">
@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="personal-notes-section">
-                    <h2>Mis Notas Personales</h2>
-                    <textarea id="personalNotes" placeholder="Escribe tus pensamientos, oraciones, y lo que Dios te está hablando hoy..."></textarea>
+                    <h2 id="personalNotesLabel">Mis Notas Personales</h2>
+                    <textarea id="personalNotes" aria-labelledby="personalNotesLabel" placeholder="Escribe tus pensamientos, oraciones, y lo que Dios te está hablando hoy..."></textarea>
                     <button id="saveNotes" class="save-btn">Guardar Notas</button>
                 </div>
 

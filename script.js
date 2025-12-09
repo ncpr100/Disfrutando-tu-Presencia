@@ -136,6 +136,7 @@ function loadContent(date) {
 function loadSavedNotes(dateKey) {
     const savedNotes = localStorage.getItem(`notes_${dateKey}`);
     document.getElementById('personalNotes').value = savedNotes || '';
+    lastSavedNotes = savedNotes || '';
 }
 
 function saveNotes() {
@@ -156,7 +157,9 @@ function saveNotes() {
 }
 
 function changeDay(delta) {
-    currentDate.setDate(currentDate.getDate() + delta);
+    const newDate = new Date(currentDate);
+    newDate.setDate(newDate.getDate() + delta);
+    currentDate = newDate;
     loadContent(currentDate);
 }
 
@@ -166,11 +169,13 @@ document.getElementById('nextDay').addEventListener('click', () => changeDay(1))
 document.getElementById('saveNotes').addEventListener('click', saveNotes);
 
 // Auto-save notes periodically
+let lastSavedNotes = '';
 setInterval(() => {
     const notes = document.getElementById('personalNotes').value;
-    if (notes.trim()) {
+    if (notes.trim() && notes !== lastSavedNotes) {
         const dateKey = getDateKey(currentDate);
         localStorage.setItem(`notes_${dateKey}`, notes);
+        lastSavedNotes = notes;
     }
 }, 30000); // Auto-save every 30 seconds
 
