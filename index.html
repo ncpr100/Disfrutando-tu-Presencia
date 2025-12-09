@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Padre y Yo - Diario Cristiano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>EL PADRE Y YO</h1>
+            <p class="subtitle">Una guía diaria para aprender a escuchar, obedecer, y alinearme con el corazón de Dios</p>
+        </header>
+
+        <main>
+            <div class="date-selector">
+                <button id="prevDay" class="nav-btn" aria-label="Día anterior">←</button>
+                <div class="date-display">
+                    <span id="currentDate"></span>
+                </div>
+                <button id="nextDay" class="nav-btn" aria-label="Día siguiente">→</button>
+            </div>
+
+            <div class="journal-entry">
+                <div class="verse-section">
+                    <h2>Versículo del Día</h2>
+                    <blockquote id="verse">
+                        <p class="verse-text"></p>
+                        <cite class="verse-reference"></cite>
+                    </blockquote>
+                </div>
+
+                <div class="reflection-section">
+                    <h2>Reflexión</h2>
+                    <div id="reflection" class="reflection-text"></div>
+                </div>
+
+                <div class="prayer-section">
+                    <h2>Oración</h2>
+                    <div id="prayer" class="prayer-text"></div>
+                </div>
+
+                <div class="personal-notes-section">
+                    <h2 id="personalNotesLabel">Mis Notas Personales</h2>
+                    <textarea id="personalNotes" aria-labelledby="personalNotesLabel" placeholder="Escribe tus pensamientos, oraciones, y lo que Dios te está hablando hoy..."></textarea>
+                    <button id="saveNotes" class="save-btn">Guardar Notas</button>
+                </div>
+
+                <div class="questions-section">
+                    <h2>Para Reflexionar</h2>
+                    <ul id="questions"></ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p id="copyrightYear">© 2024 El Padre y Yo - Disfrutando tu Presencia</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
