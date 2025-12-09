@@ -1,4 +1,6 @@
 // Daily devotional content in Spanish
+let lastSavedNotes = '';
+
 const devotionalContent = {
     // Sample content for different days
     '2025-12-09': {
@@ -169,7 +171,6 @@ document.getElementById('nextDay').addEventListener('click', () => changeDay(1))
 document.getElementById('saveNotes').addEventListener('click', saveNotes);
 
 // Auto-save notes periodically
-let lastSavedNotes = '';
 setInterval(() => {
     const notes = document.getElementById('personalNotes').value;
     if (notes.trim() && notes !== lastSavedNotes) {
@@ -198,4 +199,7 @@ document.addEventListener('keydown', (e) => {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadContent(currentDate);
+    // Set dynamic copyright year
+    const currentYear = new Date().getFullYear();
+    document.getElementById('copyrightYear').textContent = `© ${currentYear} El Padre y Yo - Disfrutando tu Presencia`;
 });
