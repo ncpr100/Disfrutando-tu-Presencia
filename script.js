@@ -145,6 +145,7 @@ function saveNotes() {
     const dateKey = getDateKey(currentDate);
     const notes = document.getElementById('personalNotes').value;
     localStorage.setItem(`notes_${dateKey}`, notes);
+    lastSavedNotes = notes;
     
     // Show feedback
     const saveBtn = document.getElementById('saveNotes');
